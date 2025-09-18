@@ -33,7 +33,14 @@ export default function Profile() {
         <Grid size={{ xs: 12, md: 4 }}>
           <Stack spacing={3}>
             {/* --------------------------------------------------Followers---------------------------------------------------------- */}
-            <Card sx={{ py: 3, textAlign: "center", typography: "h1" }}>
+            <Card
+              sx={{
+                py: 3,
+                textAlign: "center",
+                typography: "h1",
+                borderRadius: 5,
+              }}
+            >
               <Stack
                 divider={
                   <Divider
@@ -67,7 +74,7 @@ export default function Profile() {
             </Card>
             {/* --------------------------------------------------Followers---------------------------------------------------------- */}
             {/* -----------------------------------------------------About------------------------------------------------------- */}
-            <Card>
+            <Card sx={{ borderRadius: 5 }}>
               <CardHeader title="About" />
               <Stack spacing={2} sx={{ p: 3, typography: "h6" }}>
                 <Typography>
@@ -127,7 +134,7 @@ export default function Profile() {
             </Card>
             {/* -----------------------------------------------------About------------------------------------------------------- */}
             {/* -----------------------------------------------------Social------------------------------------------------------- */}
-            <Card>
+            <Card sx={{ borderRadius: 5 }}>
               <CardHeader title="Social" />
 
               <Stack spacing={2} sx={{ p: 2 }}>
@@ -188,7 +195,7 @@ export default function Profile() {
         </Grid>
         <Grid size={{ xs: 12, md: 8 }}>
           {/* ---------------------------------------------------Post Input------------------------------------------------------------- */}
-          <Card sx={{ p: 3 }}>
+          <Card sx={{ p: 3, borderRadius: 5 }}>
             <InputBase
               placeholder="Share what your are thinking here..."
               rows={4}

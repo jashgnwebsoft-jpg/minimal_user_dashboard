@@ -147,7 +147,7 @@ const CardInputBox = () => {
 const PostComponent = (props: Post) => {
   const { userName, postDate, postCaption, comments, postImage } = props;
   return (
-    <Card sx={{ my: 3 }}>
+    <Card sx={{ my: 3, borderRadius: 5 }}>
       <CustomHeader userName={userName} postDate={postDate} />
       <Typography variant="body2" m={2}>
         {postCaption}
