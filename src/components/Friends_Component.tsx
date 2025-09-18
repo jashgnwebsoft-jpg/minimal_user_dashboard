@@ -9,7 +9,7 @@ export default function Friends_Component(follower: Follower_type) {
       <Paper
         elevation={2}
         sx={{
-          borderRadius: "16px",
+          borderRadius: 5,
           alignItems: "center",
           justifyContent: "center",
           pt: 1,

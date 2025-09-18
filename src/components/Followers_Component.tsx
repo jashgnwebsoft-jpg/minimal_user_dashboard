@@ -20,8 +20,7 @@ export default function Followers_Component(follower: Follower_type) {
       <Paper
         elevation={1}
         sx={{
-          borderRadius: "16px",
-          boxShadow: "0px 1pt 50px -40px #050404ff",
+          borderRadius: 5,
         }}
       >
         <Box

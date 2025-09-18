@@ -17,7 +17,7 @@ export default function Gallery() {
                 height: "22rem",
                 backgroundSize: "cover",
                 backgroundImage: `url(${data})`,
-                borderRadius: "1rem",
+                borderRadius: 5,
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
