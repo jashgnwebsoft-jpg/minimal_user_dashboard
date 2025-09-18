@@ -482,7 +482,9 @@ export default function UserDashboard() {
                 <Box sx={{ gap: 2, display: "flex" }}>
                   <Avatar alt="Jash" src="src/assets/images/avatar-4.webp" />
 
-                  <Paper
+                  <Box
+                    border="1px solid #919EAB52"
+                    borderRadius={2}
                     component="form"
                     sx={{
                       p: "2px 4px",
@@ -515,7 +517,7 @@ export default function UserDashboard() {
                         height="24"
                       />
                     </IconButton>
-                  </Paper>
+                  </Box>
                 </Box>
               </Stack>
             </Card>
