@@ -50,7 +50,11 @@ export default function Gallery() {
                 <Typography color="white" variant="h5">
                   The Future of Renewable Energy: Innovation
                 </Typography>
-                <Typography variant="h5" color="#FFFFFF" sx={{ opacity: 0.48 }}>
+                <Typography
+                  variant="body1"
+                  color="#FFFFFF"
+                  sx={{ opacity: 0.48 }}
+                >
                   18 Sep 2025
                 </Typography>
               </Box>

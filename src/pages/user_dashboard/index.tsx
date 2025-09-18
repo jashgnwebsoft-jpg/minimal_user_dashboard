@@ -21,6 +21,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Icon } from "@iconify/react";
+import PostComponent from "../../components/PostComponent";
 
 const BreadcrumbsSeparator = styled("span")(() => ({
   width: 4,
@@ -359,7 +360,7 @@ export default function UserDashboard() {
             </Card>
             {/* ---------------------------------------------------Post Input------------------------------------------------------------- */}
             {/* ---------------------------------------------------Post First------------------------------------------------------------- */}
-            <Card sx={{ my: 3 }}>
+            {/* <Card sx={{ my: 3 }}>
               <CustomHeader />
               <Typography variant="body2" m={2}>
                 The sun slowly set over the horizon, painting the sky in vibrant
@@ -520,7 +521,8 @@ export default function UserDashboard() {
                   </Box>
                 </Box>
               </Stack>
-            </Card>
+            </Card> */}
+            <PostComponent />
             {/* ---------------------------------------------------Post First------------------------------------------------------------- */}
             {/* ---------------------------------------------------Post Second------------------------------------------------------------- */}
             <Card sx={{ my: 3 }}>

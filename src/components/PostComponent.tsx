@@ -89,38 +89,45 @@ const CardImage = (props: cardImage) => {
   );
 };
 
-const CardComment = (props: commnetType) => {
-  const { comment, commentDate, commentUserName, commnetImage } = props;
+const CardComment = (commnetData: commnetType[]) => {
   return (
-    <Box sx={{ gap: 2, display: "flex" }}>
-      <Avatar alt={commentUserName} src={commnetImage} />
+    <>
+      {commnetData.map((data) => {
+        return (
+          <Box sx={{ gap: 2, display: "flex" }}>
+            <Avatar alt={data.commentUserName} src={data.commnetImage} />
 
-      <Paper
-        sx={{
-          p: 1.5,
-          flexGrow: 1,
-          bgcolor: "#F4F6F8",
-        }}
-      >
-        <Box
-          sx={{
-            mb: 0.5,
-            display: "flex",
-            alignItems: { sm: "center" },
-            justifyContent: "space-between",
-            flexDirection: { xs: "column", sm: "row" },
-          }}
-        >
-          <Box sx={{ typography: "h6" }}>{commentUserName}</Box>
+            <Paper
+              sx={{
+                p: 1.5,
+                flexGrow: 1,
+                bgcolor: "#F4F6F8",
+              }}
+            >
+              <Box
+                sx={{
+                  mb: 0.5,
+                  display: "flex",
+                  alignItems: { sm: "center" },
+                  justifyContent: "space-between",
+                  flexDirection: { xs: "column", sm: "row" },
+                }}
+              >
+                <Box sx={{ typography: "h6" }}>{data.commentUserName}</Box>
 
-          <Box sx={{ typography: "caption", color: "#919EAB" }}>
-            {commentDate}
+                <Box sx={{ typography: "caption", color: "#919EAB" }}>
+                  {data.commentDate}
+                </Box>
+              </Box>
+
+              <Box sx={{ typography: "body2", color: "#637381" }}>
+                {data.comment}
+              </Box>
+            </Paper>
           </Box>
-        </Box>
-
-        <Box sx={{ typography: "body2", color: "#637381" }}>{comment}</Box>
-      </Paper>
-    </Box>
+        );
+      })}
+    </>
   );
 };
 
@@ -166,9 +173,7 @@ const PostComponent = () => {
         orange and pink.
       </Typography>
       <CardImage path="src/assets/images/travel-2.webp" />
-      {/* {data.map((x) => (
-        <CardComment />
-      ))} */}
+
       <Box
         sx={{
           display: "flex",
@@ -208,6 +213,9 @@ const PostComponent = () => {
           </IconButton>
         </Stack>
       </Box>
+      <Stack spacing={1.5} sx={{ px: 3, pb: 2, my: 3 }}>
+        {CardComment(data)}
+      </Stack>
       <Stack spacing={1.5} sx={{ px: 3, pb: 2, my: 3 }}>
         <CardInputBox />
       </Stack>
