@@ -4,8 +4,8 @@ import Gallery from "./pages/user_dashboard/Gallery";
 function App() {
   return (
     <>
-      <Gallery />
-      {/* <UserDashboard /> */}
+      {/* <Gallery /> */}
+      <UserDashboard />
     </>
   );
 }
