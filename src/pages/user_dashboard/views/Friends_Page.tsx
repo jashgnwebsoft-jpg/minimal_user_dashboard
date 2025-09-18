@@ -60,13 +60,9 @@ export default function Friends_Page(followers: Follower_List_Type) {
           }}
         />
       </Box>
-      <Grid
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
-      >
+      <Grid container spacing={{ xs: 2, md: 3 }}>
         {searchData.map((item, index) => (
-          <Grid key={index} size={{ xs: 2, sm: 4, md: 4 }}>
+          <Grid key={index} size={{ xs: 12, md: 4 }}>
             <Friends_Component {...item} />
           </Grid>
         ))}

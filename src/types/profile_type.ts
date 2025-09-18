@@ -19,4 +19,5 @@ export type Post = {
   postDate: string;
   postCaption: string;
   comments?: commnetType[];
+  postImage: string;
 };

@@ -4,6 +4,7 @@ export const PostData: Post[] = [
   {
     userName: "Jaydon Frankie",
     postDate: "18 Sep 2025",
+    postImage: "src/assets/images/travel-2.webp",
     postCaption:
       "The sun slowly set over the horizon, painting the sky in vibrant hues of orange and pink.",
     comments: [
@@ -25,6 +26,7 @@ export const PostData: Post[] = [
   {
     userName: "Jaydon Frankie",
     postDate: "17 Sep 2025",
+    postImage: "src/assets/images/travel-3.webp",
     postCaption:
       "She eagerly opened the gift, her eyes sparkling with excitement.",
     comments: [
@@ -46,6 +48,7 @@ export const PostData: Post[] = [
   {
     userName: "Jaydon Frankie",
     postDate: "16 Sep 2025",
+    postImage: "src/assets/images/travel-4.webp",
     postCaption:
       "The old oak tree stood tall and majestic, its branches swaying gently in the breeze.",
   },
