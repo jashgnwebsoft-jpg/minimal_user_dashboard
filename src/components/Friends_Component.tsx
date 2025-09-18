@@ -7,10 +7,9 @@ export default function Friends_Component(follower: Follower_type) {
   return (
     <>
       <Paper
-        elevation={1}
+        elevation={2}
         sx={{
           borderRadius: "16px",
-          boxShadow: "0px 1pt 50px -40px #050404ff",
           alignItems: "center",
           justifyContent: "center",
           pt: 1,
@@ -52,7 +51,7 @@ export default function Friends_Component(follower: Follower_type) {
                 fontWeight: 600,
               }}
             >
-             {follower.name}
+              {follower.name}
             </Typography>
             <Typography variant="caption" color="grey">
               {follower.job_role}

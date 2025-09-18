@@ -14,42 +14,22 @@ import {
   Typography,
 } from "@mui/material";
 import { Icon } from "@iconify/react";
+import type {
+  cardHeader,
+  cardImage,
+  commnetType,
+  Post,
+} from "../types/profile_type";
 
-type commnetType = {
-  commentDate: string;
-  commentUserName: string;
-  commnetImage: string;
-  comment: string;
-};
-
-type cardImage = {
-  path: string;
-};
-
-const data: commnetType[] = [
-  {
-    commentDate: "15 Sep 2025",
-    commentUserName: "Lainey Davidson",
-    commnetImage: "src/assets/images/avatar-2.webp",
-    comment: "Praesent venenatis metus at",
-  },
-  {
-    commentDate: "14 Sep 2025",
-    commentUserName: "Cristopher Cardenas",
-    commnetImage: "src/assets/images/avatar-4.webp",
-    comment:
-      "Etiam rhoncus. Nullam vel sem. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Sed lectus.",
-  },
-];
-
-const CustomHeader = () => {
+const CustomHeader = (props: cardHeader) => {
+  const { userName, postDate } = props;
   return (
     <CardHeader
       disableTypography
       avatar={<Avatar src="src/assets/images/avatar-25.webp">J</Avatar>}
       title={
         <Link color="inherit" variant="h5" sx={{ textDecoration: "none" }}>
-          Jash Tank
+          {userName}
         </Link>
       }
       subheader={
@@ -60,7 +40,7 @@ const CustomHeader = () => {
             mt: 0.5,
           }}
         >
-          17 Sep 2025
+          {postDate}
         </Box>
       }
       action={
@@ -92,9 +72,9 @@ const CardImage = (props: cardImage) => {
 const CardComment = (commnetData: commnetType[]) => {
   return (
     <>
-      {commnetData.map((data) => {
+      {commnetData.map((data, index) => {
         return (
-          <Box sx={{ gap: 2, display: "flex" }}>
+          <Box sx={{ gap: 2, display: "flex" }} key={index}>
             <Avatar alt={data.commentUserName} src={data.commnetImage} />
 
             <Paper
@@ -164,13 +144,13 @@ const CardInputBox = () => {
   );
 };
 
-const PostComponent = () => {
+const PostComponent = (props: Post) => {
+  const { userName, postDate, postCaption, comments } = props;
   return (
     <Card sx={{ my: 3 }}>
-      <CustomHeader />
+      <CustomHeader userName={userName} postDate={postDate} />
       <Typography variant="body2" m={2}>
-        The sun slowly set over the horizon, painting the sky in vibrant hues of
-        orange and pink.
+        {postCaption}
       </Typography>
       <CardImage path="src/assets/images/travel-2.webp" />
 
@@ -213,9 +193,12 @@ const PostComponent = () => {
           </IconButton>
         </Stack>
       </Box>
-      <Stack spacing={1.5} sx={{ px: 3, pb: 2, my: 3 }}>
-        {CardComment(data)}
-      </Stack>
+      {comments && (
+        <Stack spacing={1.5} sx={{ px: 3, pb: 2, my: 3 }}>
+          {CardComment(comments)}
+        </Stack>
+      )}
+
       <Stack spacing={1.5} sx={{ px: 3, pb: 2, my: 3 }}>
         <CardInputBox />
       </Stack>

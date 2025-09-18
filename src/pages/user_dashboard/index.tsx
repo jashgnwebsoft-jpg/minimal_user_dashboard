@@ -20,10 +20,9 @@ import Gallery from "./views/Gallery";
 import { followers_data } from "../../data/followers";
 
 const StyledTab = styled(Tab)(() => ({
-  
-  "&.css-iypnj4-MuiButtonBase-root-MuiTab-root.Mui-selected" :{
-    color:"black"
-  }
+  "&.css-iypnj4-MuiButtonBase-root-MuiTab-root.Mui-selected": {
+    color: "black",
+  },
 }));
 
 const BreadcrumbsSeparator = styled("span")(() => ({
@@ -66,16 +65,15 @@ const breadcrumbs = [
   </Typography>,
 ];
 
-
 export default function UserDashboard() {
   const [value, setValue] = useState(0);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
   return (
     <>
-      <Container >
+      <Container>
         <Box
           sx={{
             display: "flex",
@@ -92,8 +90,7 @@ export default function UserDashboard() {
             {breadcrumbs}
           </Breadcrumbs>
         </Box>
-        <Paper elevation={3} sx={{borderRadius: "20px"}}>
-          {/* main box */}
+        <Paper elevation={3} sx={{ borderRadius: "20px" }}>
           <Box
             sx={{
               backgroundColor: "#0b3c46",
@@ -103,7 +100,7 @@ export default function UserDashboard() {
             }}
           >
             <img
-              style={{ height: "100%", width: "100%", opacity: 0.3  }}
+              style={{ height: "100%", width: "100%", opacity: 0.3 }}
               src="src/assets/images/card-bg-image.webp"
             />
             <Box
@@ -136,9 +133,9 @@ export default function UserDashboard() {
               />
             </Box>
           </Box>
-          
-          <Box sx={{width: "100%",borderRadius: "20px"}}>
-          <Box
+
+          <Box sx={{ width: "100%", borderRadius: "20px" }}>
+            <Box
               sx={{
                 pl: "24px",
                 height: "60px",
@@ -146,8 +143,8 @@ export default function UserDashboard() {
                 zIndex: 9,
                 display: "flex",
                 flexDirection: "row-reverse",
-                boxShadow: '0px 1pt 50px -25px #050404ff',
-                borderRadius: "20px"
+                boxShadow: "0px 1pt 50px -25px #050404ff",
+                borderRadius: "20px",
               }}
             >
               <Tabs
@@ -157,11 +154,11 @@ export default function UserDashboard() {
                   sx: {
                     backgroundColor: "black",
                     ".MuiTab-root .Mui-selected": {
-                      color: "#0c0c0cff", 
+                      color: "#0c0c0cff",
                     },
-                     "& MuiButtonBase-root-MuiTab-root.Mui-selected ": {
-                      color: "#0c0c0cff", 
-                    }
+                    "& MuiButtonBase-root-MuiTab-root.Mui-selected ": {
+                      color: "#0c0c0cff",
+                    },
                   },
                 }}
               >
@@ -195,19 +192,16 @@ export default function UserDashboard() {
                 />
               </Tabs>
             </Box>
-            
-            </Box>
-             
+          </Box>
         </Paper>
-       
       </Container>
 
-      <Container sx={{my:2}}>
-      {value==0 && <Profile />}
-      {value==1 && <Followers_Page follower_list={followers_data} />}
-      {value==2 && <Friends_Page follower_list={followers_data}/>}
-      {value==3 && <Gallery/>}
+      <Container sx={{ my: 2 }}>
+        {value == 0 && <Profile />}
+        {value == 1 && <Followers_Page follower_list={followers_data} />}
+        {value == 2 && <Friends_Page follower_list={followers_data} />}
+        {value == 3 && <Gallery />}
       </Container>
-      </>
+    </>
   );
 }
