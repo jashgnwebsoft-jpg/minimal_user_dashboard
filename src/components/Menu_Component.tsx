@@ -3,8 +3,10 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { Icon } from "@iconify/react";
+import { Box, Typography } from "@mui/material";
 
-const options = ["None", "Atria", "Callisto"];
+const options = ["Delete", "Edit"];
 
 const ITEM_HEIGHT = 48;
 
@@ -38,8 +40,9 @@ export default function Menu_Component() {
         slotProps={{
           paper: {
             style: {
+              backgroundImage: `url(${"src/assets/images/bg-1.svg"}),url(${"src/assets/images/bg-2.svg"})`,
               maxHeight: ITEM_HEIGHT * 4.5,
-              width: "20ch",
+              width: "7rem",
             },
           },
           list: {
@@ -53,7 +56,35 @@ export default function Menu_Component() {
             selected={option === "Pyxis"}
             onClick={handleClose}
           >
-            {option}
+            {option === "Delete" && (
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: 2,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "red",
+                }}
+              >
+                <Icon icon="ic:round-delete" width="20" />
+                <Typography>Delete</Typography>
+              </Box>
+            )}
+            {option === "Edit" && (
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: 2,
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Icon icon="material-symbols:ink-pen-rounded" width="20" />
+                <Typography>Delete</Typography>
+              </Box>
+            )}
           </MenuItem>
         ))}
       </Menu>
