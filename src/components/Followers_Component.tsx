@@ -1,10 +1,16 @@
 import { Icon } from "@iconify/react";
-import { Avatar, Box, Button, ListItemText, Paper, Typography } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Button,
+  ListItemText,
+  Paper,
+  Typography,
+} from "@mui/material";
 import { useState } from "react";
 import type { Follower_type } from "../types/follower_type";
 
 export default function Followers_Component(follower: Follower_type) {
-    console.log(follower)
   const [followed, setFollowed] = useState(false);
   const handleSetFollowed = () => {
     setFollowed(!followed);
@@ -18,7 +24,15 @@ export default function Followers_Component(follower: Follower_type) {
           boxShadow: "0px 1pt 50px -40px #050404ff",
         }}
       >
-        <Box padding={"25px"} sx={{ display: "flex", flexDirection: "row", alignContent:"center", alignItems:"center"}}>
+        <Box
+          padding={"25px"}
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            alignContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Avatar
             alt={follower.name}
             src={follower.avatar}
@@ -27,22 +41,24 @@ export default function Followers_Component(follower: Follower_type) {
           <ListItemText
             primary={follower.name}
             secondary={
-                <>
-                 <Icon icon="mdi:location" width="20" height="20"/><Typography fontSize={"15px"}>{follower.country}</Typography>
-                </>
+              <>
+                <Icon icon="mdi:location" width="20" height="20" />
+                <Typography fontSize="15px" variant="caption">
+                  {follower.country}
+                </Typography>
+              </>
             }
             sx={{ pl: 3, color: "black" }}
             secondaryTypographyProps={{
               style: { color: "grey" },
-              alignContent:"center",
+              alignContent: "center",
               alignItems: "center",
-              display:"flex",
-              flexDirection:"row"
+              display: "flex",
+              flexDirection: "row",
             }}
             primaryTypographyProps={{
               fontWeight: "600",
             }}
-            
           />
           {followed && (
             <Button
@@ -56,7 +72,7 @@ export default function Followers_Component(follower: Follower_type) {
                 color: "green",
                 borderColor: "white",
                 "&:hover": {
-                  borderColor: "white", // Changes border color on hover
+                  borderColor: "white",
                 },
               }}
             >

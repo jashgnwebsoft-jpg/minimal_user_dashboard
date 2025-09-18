@@ -13,9 +13,6 @@ import type {
 import { Search } from "@mui/icons-material";
 import { useState } from "react";
 export default function Friends_Page(followers: Follower_List_Type) {
-
-
-
   const [inputValue, setInputValue] = useState("");
   const [searchData, setSearchData] = useState(followers.follower_list);
   let filteredList: Follower_type[] = followers.follower_list;
@@ -27,7 +24,6 @@ export default function Friends_Page(followers: Follower_List_Type) {
       item.name.toLowerCase().includes(query.toLowerCase())
     );
   };
-
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -52,7 +48,9 @@ export default function Friends_Page(followers: Follower_List_Type) {
           placeholder="Search Friends..."
           variant="outlined"
           value={inputValue}
-          onChange={(event:React.ChangeEvent<HTMLInputElement>) => handleInputChange(event)}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            handleInputChange(event)
+          }
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">

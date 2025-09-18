@@ -3,10 +3,9 @@ import type { Follower_List_Type } from "../../../types/follower_type";
 import Followers_Component from "../../../components/Followers_Component";
 
 export default function Followers_Page(followers: Follower_List_Type) {
-  
   return (
     <>
-    <Box
+      <Box
         sx={{
           mb: 3,
           display: "flex",
@@ -16,8 +15,7 @@ export default function Followers_Page(followers: Follower_List_Type) {
         }}
       >
         <Typography variant="h5">Followers</Typography>
-        
-        </Box>
+      </Box>
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}

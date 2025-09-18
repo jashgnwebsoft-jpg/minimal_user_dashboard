@@ -1,11 +1,8 @@
-
 import UserDashboard from "./pages/user_dashboard";
 function App() {
   return (
     <>
-      <UserDashboard/>
-      
-
+      <UserDashboard />
     </>
   );
 }
