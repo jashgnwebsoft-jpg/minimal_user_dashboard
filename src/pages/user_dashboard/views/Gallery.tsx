@@ -1,4 +1,4 @@
-import { Box, Container, Grid, IconButton, Typography } from "@mui/material";
+import { Box, Grid, IconButton, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
 
 const imageUrl: string[] = [
@@ -18,7 +18,6 @@ const imageUrl: string[] = [
 
 export default function Gallery() {
   return (
-    <Container>
       <Grid container spacing={3}>
         {imageUrl.map((data, index) => (
           <Grid size={{ xs: 12, md: 4 }} key={index}>
@@ -62,6 +61,5 @@ export default function Gallery() {
           </Grid>
         ))}
       </Grid>
-    </Container>
   );
 }

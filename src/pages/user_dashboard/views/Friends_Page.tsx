@@ -28,7 +28,7 @@ export default function Friends_Page(followers: Follower_List_Type) {
     );
   };
 
-  
+
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
     filteredList = filterData(event.target.value, followers.follower_list);
@@ -52,7 +52,7 @@ export default function Friends_Page(followers: Follower_List_Type) {
           placeholder="Search Friends..."
           variant="outlined"
           value={inputValue}
-          onChange={(event) => handleInputChange(event)}
+          onChange={(event:React.ChangeEvent<HTMLInputElement>) => handleInputChange(event)}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
