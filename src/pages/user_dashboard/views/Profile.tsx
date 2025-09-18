@@ -240,6 +240,7 @@ export default function Profile() {
             <PostComponent
               key={index}
               userName={data.userName}
+              postImage={data.postImage}
               postDate={data.postDate}
               postCaption={data.postCaption}
               comments={data.comments}

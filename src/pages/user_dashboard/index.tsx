@@ -142,8 +142,7 @@ export default function UserDashboard() {
                 backgroundColor: "#fdfdfdff",
                 zIndex: 9,
                 display: "flex",
-                flexDirection: "row-reverse",
-                boxShadow: "0px 1pt 50px -25px #050404ff",
+                flexDirection: { xs: "column", md: "row-reverse" },
                 borderRadius: "20px",
               }}
             >

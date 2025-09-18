@@ -22,7 +22,7 @@ export default function Followers_Page(followers: Follower_List_Type) {
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
         {followers.follower_list.map((item, index) => (
-          <Grid key={index} size={{ xs: 2, sm: 4, md: 4 }}>
+          <Grid key={index} size={{ xs: 12, md: 4 }}>
             <Followers_Component {...item} />
           </Grid>
         ))}

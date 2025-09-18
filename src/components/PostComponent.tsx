@@ -145,21 +145,21 @@ const CardInputBox = () => {
 };
 
 const PostComponent = (props: Post) => {
-  const { userName, postDate, postCaption, comments } = props;
+  const { userName, postDate, postCaption, comments, postImage } = props;
   return (
     <Card sx={{ my: 3 }}>
       <CustomHeader userName={userName} postDate={postDate} />
       <Typography variant="body2" m={2}>
         {postCaption}
       </Typography>
-      <CardImage path="src/assets/images/travel-2.webp" />
+      <CardImage path={postImage} />
 
       <Box
         sx={{
           display: "flex",
-          direction: "row",
+          flexDirection: { xs: "column", md: "row" },
           justifyContent: "space-between",
-          alignItems: "center",
+          alignItems: { xs: "flex-start", md: "center" },
           m: 2,
           px: 2,
         }}
@@ -193,13 +193,9 @@ const PostComponent = (props: Post) => {
           </IconButton>
         </Stack>
       </Box>
-      {comments && (
-        <Stack spacing={1.5} sx={{ px: 3, pb: 2, my: 3 }}>
-          {CardComment(comments)}
-        </Stack>
-      )}
 
-      <Stack spacing={1.5} sx={{ px: 3, pb: 2, my: 3 }}>
+      <Stack spacing={1.5} sx={{ px: 3, pb: 2 }}>
+        {comments && CardComment(comments)}
         <CardInputBox />
       </Stack>
     </Card>
