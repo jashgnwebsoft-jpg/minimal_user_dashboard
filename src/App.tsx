@@ -1,9 +1,10 @@
-import UserDashboard from "./pages/user_dashboard";
+
+import Followers from "./pages/user_dashboard/views/Followers";
 
 function App() {
   return (
     <>
-      <UserDashboard />
+      <Followers />
     </>
   );
 }
