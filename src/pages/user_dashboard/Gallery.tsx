@@ -20,8 +20,8 @@ export default function Gallery() {
   return (
     <Container>
       <Grid container spacing={3}>
-        {imageUrl.map((data) => (
-          <Grid size={{ xs: 12, md: 4 }}>
+        {imageUrl.map((data, index) => (
+          <Grid size={{ xs: 12, md: 4 }} key={index}>
             <Box
               sx={{
                 width: "100%",
