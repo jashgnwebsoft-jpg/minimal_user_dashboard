@@ -1,8 +1,11 @@
-import { Box, Grid, IconButton, Typography } from "@mui/material";
+import { Box, Dialog, Grid, IconButton, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
 import { imageUrl } from "../../../data/gallery";
+import { useState } from "react";
 
 export default function Gallery() {
+  const [selectedImg, setSelectedImg] = useState('');
+  const handleClose = () => setSelectedImg('');
   return (
     <>
       <Typography variant="h5" mb={3}>
@@ -31,7 +34,11 @@ export default function Gallery() {
                   justifyContent: "end",
                 }}
               >
-                <IconButton>
+                <IconButton
+                  onClick={() => {
+                      setSelectedImg(data);
+                    }}
+                >
                   <Icon icon="eva:more-vertical-fill" color="white" />
                 </IconButton>
               </Box>
@@ -47,6 +54,15 @@ export default function Gallery() {
                   18 Sep 2025
                 </Typography>
               </Box>
+              <Dialog
+              onClose={handleClose}
+              open={data === selectedImg}
+            >
+              <img
+                src={data}
+                loading="lazy"
+              />
+            </Dialog>
             </Box>
           </Grid>
         ))}
