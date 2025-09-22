@@ -144,7 +144,7 @@ const CardInputBox = () => {
   );
 };
 
-const LikeSession = () => {
+const LikeSection = () => {
   return (
     <Box
       sx={{
@@ -197,7 +197,7 @@ const PostComponent = (props: Post) => {
         {postCaption}
       </Typography>
       <CardImage path={postImage} />
-      <LikeSession />
+      <LikeSection />
       <Stack spacing={1.5} sx={{ px: 3, pb: 2 }}>
         {comments && CardComment(comments)}
         <CardInputBox />
