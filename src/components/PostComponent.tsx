@@ -144,6 +144,50 @@ const CardInputBox = () => {
   );
 };
 
+const LikeSession = () => {
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: { xs: "column", md: "row" },
+        justifyContent: "space-between",
+        alignItems: { xs: "flex-start", md: "center" },
+        m: 2,
+        px: 2,
+      }}
+    >
+      <Stack direction="row" gap={1}>
+        <FormControlLabel
+          control={
+            <Checkbox
+              defaultChecked
+              color="error"
+              icon={<Icon icon="solar:heart-bold" />}
+              checkedIcon={<Icon icon="solar:heart-bold" />}
+            />
+          }
+          label={20}
+          sx={{ mr: 1 }}
+        />
+        <AvatarGroup total={20}>
+          <Avatar alt="Remy Sharp" src="src/assets/images/avatar-3.webp" />
+          <Avatar alt="Travis Howard" src="src/assets/images/avatar-4.webp" />
+          <Avatar alt="Cindy Baker" src="src/assets/images/avatar-5.webp" />
+        </AvatarGroup>
+      </Stack>
+      <Stack direction="row" gap={1}>
+        <IconButton>
+          <Icon icon="solar:chat-round-dots-bold" />
+        </IconButton>
+
+        <IconButton>
+          <Icon icon="solar:share-bold" />
+        </IconButton>
+      </Stack>
+    </Box>
+  );
+};
+
 const PostComponent = (props: Post) => {
   const { userName, postDate, postCaption, comments, postImage } = props;
   return (
@@ -153,47 +197,7 @@ const PostComponent = (props: Post) => {
         {postCaption}
       </Typography>
       <CardImage path={postImage} />
-
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          justifyContent: "space-between",
-          alignItems: { xs: "flex-start", md: "center" },
-          m: 2,
-          px: 2,
-        }}
-      >
-        <Stack direction="row" gap={1}>
-          <FormControlLabel
-            control={
-              <Checkbox
-                defaultChecked
-                color="error"
-                icon={<Icon icon="solar:heart-bold" />}
-                checkedIcon={<Icon icon="solar:heart-bold" />}
-              />
-            }
-            label={20}
-            sx={{ mr: 1 }}
-          />
-          <AvatarGroup total={20}>
-            <Avatar alt="Remy Sharp" src="src/assets/images/avatar-3.webp" />
-            <Avatar alt="Travis Howard" src="src/assets/images/avatar-4.webp" />
-            <Avatar alt="Cindy Baker" src="src/assets/images/avatar-5.webp" />
-          </AvatarGroup>
-        </Stack>
-        <Stack direction="row" gap={1}>
-          <IconButton>
-            <Icon icon="solar:chat-round-dots-bold" />
-          </IconButton>
-
-          <IconButton>
-            <Icon icon="solar:share-bold" />
-          </IconButton>
-        </Stack>
-      </Box>
-
+      <LikeSession />
       <Stack spacing={1.5} sx={{ px: 3, pb: 2 }}>
         {comments && CardComment(comments)}
         <CardInputBox />
