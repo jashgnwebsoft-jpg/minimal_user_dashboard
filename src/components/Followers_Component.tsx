@@ -11,7 +11,7 @@ import { useState } from "react";
 import type { Follower_type } from "../types/follower_type";
 
 export default function Followers_Component(follower: Follower_type) {
-  const [followed, setFollowed] = useState(false);
+  const [followed, setFollowed] = useState<boolean>(false);
   const handleSetFollowed = () => {
     setFollowed(!followed);
   };

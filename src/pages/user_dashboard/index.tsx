@@ -66,7 +66,7 @@ const breadcrumbs = [
 ];
 
 export default function UserDashboard() {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState<number>(0);
 
   const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
