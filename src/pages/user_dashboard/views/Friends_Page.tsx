@@ -12,9 +12,12 @@ import type {
 } from "../../../types/follower_type";
 import { Search } from "@mui/icons-material";
 import { useState } from "react";
+
 export default function Friends_Page(followers: Follower_List_Type) {
-  const [inputValue, setInputValue] = useState("");
-  const [searchData, setSearchData] = useState(followers.follower_list);
+  const [inputValue, setInputValue] = useState<string>("");
+  const [searchData, setSearchData] = useState<Follower_type[]>(
+    followers.follower_list
+  );
   let filteredList: Follower_type[] = followers.follower_list;
   const filterData = (query: string, data: Follower_type[]) => {
     if (!query) {

@@ -60,12 +60,22 @@ const CardImage = (props: cardImage) => {
         display: "flex",
         direction: "row",
         justifyContent: "center",
-        aspectRatio: "16/9",
+        aspectRatio: "6/4",
         p: "0.5rem",
       }}
     >
       <img src={path} width="100%" style={{ borderRadius: "1rem" }} />
     </Box>
+    // <Box
+    //   component="img"
+    //   src={path}
+    //   sx={{
+    //     width: "98%",
+    //     aspectRatio: "16/9",
+    //     p: "0.5rem",
+    //     borderRadius: "1rem",
+    //   }}
+    // />
   );
 };
 
