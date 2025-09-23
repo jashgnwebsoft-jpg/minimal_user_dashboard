@@ -21,7 +21,7 @@ export default function Menu_Component() {
   };
 
   return (
-    <div>
+    <>
       <IconButton
         aria-label="more"
         id="long-button"
@@ -88,6 +88,6 @@ export default function Menu_Component() {
           </MenuItem>
         ))}
       </Menu>
-    </div>
+    </>
   );
 }
