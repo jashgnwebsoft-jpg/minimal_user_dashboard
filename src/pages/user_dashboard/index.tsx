@@ -90,7 +90,7 @@ export default function UserDashboard() {
             {breadcrumbs}
           </Breadcrumbs>
         </Box>
-        <Paper elevation={3} sx={{ borderRadius: "20px" }}>
+        <Paper elevation={3} sx={{ borderRadius: 5 }}>
           <Box
             sx={{
               backgroundColor: "#0b3c46",
@@ -137,9 +137,6 @@ export default function UserDashboard() {
           <Box sx={{ width: "100%", borderRadius: "20px" }}>
             <Box
               sx={{
-                pl: "24px",
-                height: "60px",
-                backgroundColor: "#fdfdfdff",
                 zIndex: 9,
                 display: "flex",
                 flexDirection: { xs: "column", md: "row-reverse" },
@@ -163,19 +160,17 @@ export default function UserDashboard() {
               >
                 <StyledTab
                   label="Profile"
-                  icon={
-                    <Icon icon="hugeicons:profile-02" width="24" height="24" />
-                  }
+                  icon={<Icon icon="hugeicons:profile-02" width="24" />}
                   iconPosition="start"
                 />
                 <StyledTab
                   label="Followers"
-                  icon={<Icon icon="mdi:heart" width="24" height="24" />}
+                  icon={<Icon icon="mdi:heart" width="24" />}
                   iconPosition="start"
                 />
                 <StyledTab
                   label="Friends"
-                  icon={<Icon icon="mdi:people" width="24" height="24" />}
+                  icon={<Icon icon="mdi:people" width="24" />}
                   iconPosition="start"
                 />
                 <StyledTab
